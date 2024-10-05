@@ -20,8 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-The gem provides `match_snapshot` and `snapshot` RSpec matchers which take
-a snapshot name as an argument like:
+The gem provides `match_snapshot` and `snapshot` RSpec matchers which take a
+snapshot name as an argument like:
 
 ```ruby
 # match_snapshot
@@ -36,9 +36,9 @@ matching the passed name, the test value encountered will be serialized and
 stored in your snapshot directory as the file: `#{snapshot_name}.snap`
 
 When a test is run using a snapshot matcher and a snapshot file exists matching
-the passed name, then the test value encountered will be serialized and
-compared to the snapshot file contents. If the values match your test passes,
-otherwise it fails.
+the passed name, then the test value encountered will be serialized and compared
+to the snapshot file contents. If the values match your test passes, otherwise
+it fails.
 
 ### Rails request testing
 
@@ -98,7 +98,7 @@ RSpec.configure do |config|
   # Set this value to put all snapshots in a fixed directory
   config.snapshot_dir = "spec/fixtures/snapshots"
 
-  # Defaults to using the awesome_print gem to serialize values for snapshots
+  # Defaults to using the amazing_print gem to serialize values for snapshots
   #
   # Set this value to use a custom snapshot serializer
   config.snapshot_serializer = MyFavoriteSerializer
@@ -108,10 +108,12 @@ end
 ### Custom serializers
 
 By default, values to be stored as snapshots are serialized to human readable
-string form using the [awesome_print](https://github.com/awesome-print/awesome_print) gem.
+string form using the
+[amazing_print](https://github.com/amazing-print/amazing_print) gem.
 
-You can pass custom serializers to `rspec-snapshot` if you prefer. Pass a serializer class name to the global RSpec config, or to an individual
-matcher as a config option:
+You can pass custom serializers to `rspec-snapshot` if you prefer. Pass a
+serializer class name to the global RSpec config, or to an individual matcher as
+a config option:
 
 ```ruby
 # Set a custom serializer for all tests
@@ -130,7 +132,8 @@ the value to be serialized and returns a string.
 
 ## Migration
 
-If you're updating to version 2.x.x from 1.x.x, you may need to update all your existing snapshots since the serialization method has changed.
+If you're updating to version 2.x.x from 1.x.x, you may need to update all your
+existing snapshots since the serialization method has changed.
 
     $ UPDATE_SNAPSHOTS=true bundle exec rspec
 
@@ -160,16 +163,17 @@ Install a current version of ruby (> 2.5) and bundler. Then install gems
 
 ### Publishing a new gem version
 
-* Update the version number in `version.rb`
-* Ensure the changes to be published are merged to the master branch
-* Checkout the master branch locally
-* Run `bundle exec rake release`, which will:
-  * create a git tag for the version
-  * push git commits and tags
-  * push the `.gem` file to [rubygems.org](https://rubygems.org).
+- Update the version number in `version.rb`
+- Ensure the changes to be published are merged to the master branch
+- Checkout the master branch locally
+- Run `bundle exec rake release`, which will:
+  - create a git tag for the version
+  - push git commits and tags
+  - push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/levinmr/rspec-snapshot.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/levinmr/rspec-snapshot.
 
 A big thanks to the original author [@yesmeck](https://github.com/yesmeck).
